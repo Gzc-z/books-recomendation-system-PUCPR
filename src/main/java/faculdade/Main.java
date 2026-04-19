@@ -1,36 +1,45 @@
+import java.io.FileReader;
+import java.io.IOException;
+import java.lang.reflect.Type;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
 
-import Product.Book;
+import Books.Book;
 
-// i hate java
 public class Main {
     public static void main(String[] args) {
 
+        Gson gson = new Gson();
 
+        Type type = new TypeToken<Map<String, Map<String, String>>>(){}.getType();
+        try (FileReader file = new FileReader("books.json")) {
+            Map<String, Map<String, String>> response = gson.fromJson(file, type);
 
-        Book book;
-        for (String name : bookNames) {
-            book = new Book(name);
+            for (Map.Entry<String, Map<String, String>> entry : response.entrySet()) {
+                System.out.println(entry);
+                System.out.println("-".repeat(16));
+            }
+
+            file.close();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-
-        Gson gson = new GsonBuilder()
-            .setPrettyPrinting()
-            .create();
 
         // Set<Book> relationShip = new HashSet<>();
         // relationShip.add(book);
 
-        graph graphBook = new graph();
-        // graphBook.newGraph().put(book, relationShip);
 
-        for (Map.Entry<Book, Set<Book>> b : graphBook.newGraph().entrySet()) {
-            System.out.println(b);
-        }
+        // graph graphBook = new graph();
+        // graphBook.newGraph().put();
+
+        // for (Map.Entry<Book, Set<Book>> b : graphBook.newGraph().entrySet()) {
+        //     System.out.println(b);
+        // }
     }
 }
 
@@ -39,4 +48,9 @@ class graph{
         HashMap<Book, Set<Book>> hashmap = new HashMap<>();
         return hashmap;
     }
+}
+
+
+class Response {
+    List<Book> books;
 }
