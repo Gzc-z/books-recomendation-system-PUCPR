@@ -10,9 +10,14 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 import Books.Book;
+import UserIO.BooksIO;
 
 public class Main {
     public static void main(String[] args) {
+
+
+        String quaso = BooksIO.askInterests();
+        System.out.println(quaso);
 
         Gson gson = new Gson();
 
@@ -21,9 +26,10 @@ public class Main {
             Map<String, Map<String, String>> response = gson.fromJson(file, type);
 
             for (Map.Entry<String, Map<String, String>> entry : response.entrySet()) {
-                System.out.println(entry);
+                Map<String, String> inner = entry.getValue();
+                System.out.println(inner.get("Set"));
                 System.out.println("-".repeat(16));
-            }
+             }
 
             file.close();
         } catch (IOException e) {
