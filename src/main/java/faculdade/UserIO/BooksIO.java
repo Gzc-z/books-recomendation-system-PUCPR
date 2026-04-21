@@ -17,7 +17,7 @@ public class BooksIO{
     // i might ask about gender instead
     public static String askInterests(){
         System.out.println("wa' are your interests?");
-        System.out.println("1. Senhor dos Pasteis");
+        System.out.println("1. Senhor dos Pastéis");
         System.out.println("2. Jogos Ferozes");
         System.out.println("3. Mistborn");
         int resp = scan.nextInt();
