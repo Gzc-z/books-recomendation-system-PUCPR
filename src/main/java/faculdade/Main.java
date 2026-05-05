@@ -2,9 +2,12 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.lang.reflect.Type;
+import java.sql.Date;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.Map;
+import java.util.Queue;
 import java.util.Scanner;
 import java.util.Set;
 
@@ -59,8 +62,10 @@ public class Main {
             graphBook.putInGraph(BookSet, recomendations);
             recomendations.addAll(recomendationsSnapshot);
         }
+        System.out.println("\nLivro -> recomendações ; níveis de recomendações");
         for (Map.Entry<Book, Set<Book>> b : graphBook.hashmap.entrySet()) {
-            System.out.println(b);
+            Map<Book, Float> distancias = Graph.djikstraSimples(graphBook.hashmap, b.getKey());
+            System.out.println(b + "\n\t" + distancias + "\n");
         }
     }
 }
@@ -77,7 +82,9 @@ class BookReference {
                 inner.get("Name"),
                 inner.get("Genre"),
                 inner.get("Author"),
-                inner.get("Set")
+                inner.get("Set"),
+                Date.valueOf(inner.get("Publication_Date"))
+                // inner.get("Publication_Date")
             );
             if (inner.get("Set").equals(interests)){
                 recomendations.add(book);
@@ -92,5 +99,29 @@ class Graph{
     public HashMap<Book, Set<Book>> putInGraph(Book book, Set<Book> recomendations){
         hashmap.put(book, new HashSet<>(recomendations));
         return hashmap;
+    }
+
+    public static Map<Book, Float> djikstraSimples(HashMap<Book, Set<Book>> grafo, Book origem) {
+        Map<Book, Float> distancias = new HashMap<>();
+        Queue<Book> fila = new LinkedList<>();
+        distancias.put(origem, 0f);
+        fila.add(origem);
+        while (!fila.isEmpty()) {
+            Book atual = fila.poll();
+            float distanciaAtual = distancias.get(atual);
+            for (Book vizinho : grafo.getOrDefault(atual, new HashSet<>())) {
+                if (!distancias.containsKey(vizinho)) {
+                    // com certeza existe algo mlr q isso
+                    if (origem.Date.after(vizinho.Date)){
+                        distancias.put(vizinho, distanciaAtual + 0.6f);
+                    } else{
+                        distancias.put(vizinho, distanciaAtual + 0.9f);
+                    }
+                    fila.add(vizinho);
+                }
+            }
+        }
+        distancias.remove(origem);
+        return distancias;
     }
 }

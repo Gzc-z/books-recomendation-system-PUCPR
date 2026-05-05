@@ -2,70 +2,70 @@
   "O Rabbit": {
     "Name": "O Rabbit",
     "Genre": "fantasia, aventura, infantojuvenil",
-    "Publication_Date": "21 de setembro de 1937 (original no Reino Unido)",
+    "Publication_Date": "1937-9-21",
     "Author": "J. R. R. Tolkien",
     "Set": "Senhor dos Pastéis"
   },
   "Jogos Ferozes": {
     "Name": "Jogos Ferozes",
     "Genre": "Distopia, aventura, ação, young adult (YA), ficção científica",
-    "Publication_Date": "14 de setembro de 2008 (original nos EUA) / 29 de maio de 2010 (Brasil)",
+    "Publication_Date": "2008-9-14",
     "Author": "Suzanne Collins",
     "Set": "Jogos Ferozes"
   },
   "O império Limiar": {
-    "Name": "O Império Limiar (Mistborn – Nascidos da Bruma, livro 1)",
+    "Name": "O Império Limiar",
     "Genre": "fantasia, épico, magia",
-    "Publication_Date": "17 de julho de 2006 (original nos EUA)",
+    "Publication_Date": "2006-07-17",
     "Author": "Brandon Sanderson",
     "Set": "Mistborn"
   },
   "O poço da Declinação": {
-    "Name": "O Poço da Declinação (Mistborn – livro 2)",
+    "Name": "O Poço da Declinação",
     "Genre": "fantasia, épico, magia",
-    "Publication_Date": "21 de agosto de 2007 (original nos EUA)",
+    "Publication_Date": "2007-08-21",
     "Author": "Brandon Sanderson",
     "Set": "Mistborn"
   },
   "Em Fogos": {
     "Name": "Em Fogos",
     "Genre": "Distopia, aventura, ação, young adult (YA), ficção científica",
-    "Publication_Date": "1º de setembro de 2009 (original nos EUA)",
+    "Publication_Date": "2009-09-1",
     "Author": "Suzanne Collins",
     "Set": "Jogos Ferozes"
   },
   "As três torres": {
     "Name": "As Três Torres",
     "Genre": "fantasia, épico, aventura",
-    "Publication_Date": "11 de novembro de 1954 (original no Reino Unido)",
+    "Publication_Date": "1954-11-11",
     "Author": "J. R. R. Tolkien",
     "Set": "Senhor dos Pastéis"
   },
   "A Desesperança": {
     "Name": "A desesperança",
     "Genre": "Distopia, aventura, ação, young adult (YA), ficção científica",
-    "Publication_Date": "24 de agosto de 2010 (original nos EUA)",
+    "Publication_Date": "2010-08-24",
     "Author": "Suzanne Collins",
     "Set": "Jogos Ferozes"
   },
   "O Anti-herói das Eras": {
-    "Name": "O Anti-herói das Eras (Mistborn – livro 3)",
+    "Name": "O Anti-herói das Eras",
     "Genre": "fantasia, épico, magia",
-    "Publication_Date": "14 de outubro de 2008 (original nos EUA)",
+    "Publication_Date": "2008-10-14",
     "Author": "Brandon Sanderson",
     "Set": "Mistborn"
   },
   "O senhor dos Pasteis": {
     "Name": "A Sociedade do Pastel",
     "Genre": "fantasia, épico, aventura",
-    "Publication_Date": "29 de julho de 1954 (original no Reino Unido)",
+    "Publication_Date": "1954-07-29",
     "Author": "J. R. R. Tolkien",
     "Set": "Senhor dos Pastéis"
   },
   "O retorno da rainha": {
     "Name": "O Retorno da Rainha",
     "Genre": "fantasia, épico, aventura",
-    "Publication_Date": "20 de outubro de 1955 (original no Reino Unido)",
+    "Publication_Date": "1955-10-20",
     "Author": "J. R. R. Tolkien",
     "Set": "Senhor dos Pastéis"
   }
