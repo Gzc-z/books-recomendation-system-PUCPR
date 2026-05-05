@@ -1,5 +1,6 @@
 package Books;
 
+import java.sql.Date;
 import java.util.Objects;
 import java.util.UUID;
 
@@ -9,14 +10,16 @@ public class Book {
     public String Genre;
     public String Author;
     public String Set;
+    public Date Date;
 
 
-    public Book(String Name, String Genre, String Author, String Set) {
+    public Book(String Name, String Genre, String Author, String Set, Date Date) {
         this.ID = UUID.randomUUID();
         this.Name = Name;
         this.Genre = Genre;
         this.Author = Author;
         this.Set = Set;
+        this.Date = Date;
     }
 
     public UUID getID(){
@@ -41,3 +44,4 @@ public class Book {
         return Objects.hash(Name);
     }
 }
+
